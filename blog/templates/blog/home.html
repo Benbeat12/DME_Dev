@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block containt %}
+
+{% load static %}
+<div class = "container-sm bg>"
+ <div class="card me-4">
+  {% for post in post_list %}
+
+      <p class = "text-bg-primary card-header ">{{post.publication_date}}</p>
+      <h5>{{post.title}}</h5>
+      <p>{{post.articles}}</p>
+      <p>Publier par : {{post.author.username}}</p>
+
+    <a href="{% url 'post_detail' post.pk %}">commenter</a>
+      {% for comment in post.comment_set.all %}
+      <div class="card-footer ">
+        {{comment.author}} &middot; {{comment.comment}}
+      </div>
+      {% endfor %}
+
+    <hr class="bg-danger">
+  {% endfor %}
+ </div>
+</div>
+{% endblock  %}
