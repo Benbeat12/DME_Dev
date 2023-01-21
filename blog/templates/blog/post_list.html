@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block containt %}
+{% block content %}
 <h5> Publication de {{user.username}}</h5>
 <div class = "card text-primary">
     {% for post in post_list %}
@@ -11,4 +11,4 @@
     <p> <a class="btn btn-primary"href="{% url 'post_detail' post.pk %}">Edition</a>
     {% endfor %}
 
-{% endblock containt %}
+{% endblock content %}

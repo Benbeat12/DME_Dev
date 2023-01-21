@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     #'Service',
     'About',
     'Payments',
-    'crispy_forms',
+    "crispy_forms",
+    "crispy_bootstrap5",
     'Home',
     'django_extensions',
     'phonenumber_field',
@@ -49,6 +50,9 @@ INSTALLED_APPS = [
 
 ]
 
+# crispy form and crispy_boostrap4 ccss
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRYSPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,18 +145,17 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
+# media file for model image and other image
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#reset pass word
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+
 
 # EmailProject/settings.py
 
@@ -173,7 +176,7 @@ GRAPH_MODELS = {
 
 #CRISPY_TEMPLATE_PACK = 'uni_form'
 
-#AUTH_USER_MODEL = "CUA.MyUser"
+
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
@@ -183,4 +186,7 @@ SECURE_HSTS_SECONDS = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
-LOGIN_URL = 'CUA/userLogin'
+# user account intitialisation
+AUTH_USER_MODEL = "CUA.Customer"
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"

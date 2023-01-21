@@ -1,20 +1,19 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-{% load static %}
-<br>
-<br>
 
-
-<form method="POST" class="form-group">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button class="btn btn-info" type="submit">Login</button>
-    <p>Don't have an account? Create one here. <a href="{% url 'register' %}">Register</a> </p>
-  </form>     
+<h2 class='text-bg-primary'> Log in </h2>
+<center>
+<div class="card form-control-lg">
+    <form method = "POST"> 
+        {% csrf_token %}
+        {{ form|crispy}}<br>
+    <button class="btn btn-primary"type="submit"> LOG IN</button>
+    <hr>
+    <p>Vous avez oublier votre mot de passe <p>
+        <a class="btn btn-outline-primary" href="{% url 'password_reset' %}">Renitialiser votre mot de passe</a>
+    </form>
+    
 </div>
-
-<br>
-<br>
-{% endblock %}
+</center>
+{% endblock content %}

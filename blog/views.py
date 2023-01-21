@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
 from django.template.response import TemplateResponse
 from blog.models import Post
-#from account.models import CustomUser
+#from account.models import Customer
 from .forms import PostForm,CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
